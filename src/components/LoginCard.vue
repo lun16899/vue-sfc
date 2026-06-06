@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrapper">
     <div class="info-section">
-      <img src="/moodle4_log.jpg" alt="iLearn Logo" class="logo-image" />
+      <img :src="base + 'moodle4_log.jpg'" alt="iLearn Logo" class="logo-image" />
 
       <div class="announcement">
         <p>● 系統維護時間:每週八1:00-3:00</p>
@@ -37,6 +37,9 @@ const username = ref('')
 const password = ref('')
 const remember = ref(false)
 const loading = ref(false)
+
+// Use BASE_URL so public assets respect `base` in vite.config.js
+const base = import.meta.env.BASE_URL || '/'
 
 function onSubmit() {
   loading.value = true
